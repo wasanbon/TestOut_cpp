@@ -1,1 +1,0 @@
-g++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/TestOutComp.dir/TestOutComp.cpp.o CMakeFiles/TestOutComp.dir/TestOut.cpp.o  -o TestOutComp  -L/usr/local/lib  -lomniORB4 -lomnithread -lomniDynamic4 -lRTC -lcoil 
