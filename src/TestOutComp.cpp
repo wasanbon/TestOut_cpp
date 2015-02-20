@@ -16,7 +16,7 @@
 
 void MyModuleInit(RTC::Manager* manager)
 {
-  TestOutInit(manager);
+  TestOut_cppInit(manager);
   RTC::RtcBase* comp;
 
   // Create a component

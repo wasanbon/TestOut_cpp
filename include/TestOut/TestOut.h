@@ -270,7 +270,7 @@ class TestOut
 
 extern "C"
 {
-  DLL_EXPORT void TestOutInit(RTC::Manager* manager);
+  DLL_EXPORT void TestOut_cppInit(RTC::Manager* manager);
 };
 
 #endif // TESTOUT_H
