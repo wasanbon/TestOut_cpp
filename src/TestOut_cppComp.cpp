@@ -11,7 +11,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "TestOut.h"
+#include "TestOut_cpp.h"
 
 
 void MyModuleInit(RTC::Manager* manager)

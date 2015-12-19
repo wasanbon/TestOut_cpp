@@ -7,7 +7,7 @@
  * $Id$
  */
 
-#include "TestOut.h"
+#include "TestOut_cpp.h"
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -16,9 +16,9 @@ static const char* testout_spec[] =
     "implementation_id", "TestOut_cpp",
     "type_name",         "TestOut_cpp",
     "description",       "TestOut Component",
-    "version",           "1.0.0",
-    "vendor",            "SSR",
-    "category",          "Category",
+    "version",           "1.0.2",
+    "vendor",            "Sugar Sweet Robotics",
+    "category",          "Test",
     "activity_type",     "PERIODIC",
     "kind",              "DataFlowComponent",
     "max_instance",      "1",
