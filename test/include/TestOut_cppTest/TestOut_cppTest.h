@@ -1,26 +1,22 @@
-// -*- C++ -*-
+﻿// -*- C++ -*-
 /*!
- * @file  TestOut.h
+ * @file  TestOut_cppTest.h
  * @brief TestOut Component
  * @date  $Date$
  *
  * $Id$
  */
 
-#ifndef TESTOUT_H
-#define TESTOUT_H
+#ifndef TESTOUT_CPP_TEST__H
+#define TESTOUT_CPP_TEST_H
 
 #include <rtm/idl/BasicDataTypeSkel.h>
 #include <rtm/idl/ExtendedDataTypesSkel.h>
 #include <rtm/idl/InterfaceDataTypesSkel.h>
-#include <rtm/Manager.h>
-#include <rtm/DataFlowComponentBase.h>
-#include <rtm/CorbaPort.h>
-#include <rtm/DataInPort.h>
-#include <rtm/DataOutPort.h>
 
 // Service implementation headers
 // <rtc-template block="service_impl_h">
+#include "BasicDataTypeSVC_impl.h"
 
 // </rtc-template>
 
@@ -29,14 +25,22 @@
 
 // </rtc-template>
 
-using namespace RTC;
+// Service Consumer stub headers
+// <rtc-template block="port_stub_h">
+// </rtc-template>
+
+#include <rtm/Manager.h>
+#include <rtm/DataFlowComponentBase.h>
+#include <rtm/CorbaPort.h>
+#include <rtm/DataInPort.h>
+#include <rtm/DataOutPort.h>
 
 /*!
- * @class TestOut
+ * @class TestOut_cppTest
  * @brief TestOut Component
  *
  */
-class TestOut
+class TestOut_cppTest
   : public RTC::DataFlowComponentBase
 {
  public:
@@ -44,12 +48,12 @@ class TestOut
    * @brief constructor
    * @param manager Maneger Object
    */
-  TestOut(RTC::Manager* manager);
+  TestOut_cppTest(RTC::Manager* manager);
 
   /*!
    * @brief destructor
    */
-  ~TestOut();
+  ~TestOut_cppTest();
 
   // <rtc-template block="public_attribute">
   
@@ -131,7 +135,7 @@ class TestOut
    * 
    * 
    */
-  // virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
+   virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
 
   /***
    *
@@ -144,7 +148,7 @@ class TestOut
    * 
    * 
    */
-  // virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
+   virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
 
   /***
    *
@@ -231,7 +235,7 @@ class TestOut
   RTC::TimedLong m_out;
   /*!
    */
-  InPort<RTC::TimedLong> m_outIn;
+  RTC::InPort<RTC::TimedLong> m_outIn;
   
   // </rtc-template>
 
@@ -270,7 +274,7 @@ class TestOut
 
 extern "C"
 {
-  DLL_EXPORT void TestOutInit(RTC::Manager* manager);
+  DLL_EXPORT void TestOut_cppTestInit(RTC::Manager* manager);
 };
 
-#endif // TESTOUT_H
+#endif // TESTOUT_CPP_TEST_H

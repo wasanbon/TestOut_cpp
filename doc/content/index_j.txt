@@ -1,4 +1,4 @@
-TestOut - 日本語
+﻿TestOut_cpp - 日本語
 =======================
 
 
@@ -13,9 +13,9 @@ TestOut - 日本語
 条件
 ====
 
-TestOutはOpenRTM-aist 1.0.0以上のC++版が必要です。
+TestOut_cppはOpenRTM-aist 1.0.0以上のC++版が必要です。
 
-TestOutは CMake_ を使います。CMake 2.8以上が必要です。
+TestOut_cppは CMake_ を使います。CMake 2.8以上が必要です。
 
 .. _CMAke:
    http://www.cmake.org
@@ -36,8 +36,8 @@ Windowsのユーザはインストーラパッケージを使用してコンポ�
 - 環境変数の変更を適用するため、コンポーネントを使用する前にコンピューターを
   再起動する必要があるかもしれません。
 
-TestOutは ``TestOutComp`` の実行をダブルクリックして実行することが
-できます。あるいは、 ``TestOut`` を初期化関数の ``TestOutInit`` を利用して、
+TestOut_cppは ``TestOut_cppComp`` の実行をダブルクリックして実行することが
+できます。あるいは、 ``TestOut_cpp`` を初期化関数の ``TestOut_cppInit`` を利用して、
 マネージャにロードすることができます。
 
 ソースから
@@ -47,11 +47,11 @@ TestOutは ``TestOutComp`` の実行をダブルクリックして実行する�
 
 - ソースをダウンロードして解凍してください::
 
-    tar -xvzf TestOut-1.0.0.tar.gz
+    tar -xvzf TestOut_cpp-1.0.0.tar.gz
 
 - 解凍されたフォルダに入ってください::
 
-    cd TestOut-1.0.0
+    cd TestOut_cpp-1.0.0
 
 - ``build`` フォルダを作ってください::
 
@@ -82,9 +82,9 @@ TestOutは ``TestOutComp`` の実行をダブルクリックして実行する�
 ここまでで、コンポーネントが使えるようになりました。コンフィグレーションは次のセクションを
 参照してください。
 
-TestOutは ``TestOutComp`` を実行（ ``${prefix}/components/bin`` に
+TestOut_cppは ``TestOut_cppComp`` を実行（ ``${prefix}/components/bin`` に
 インストールされます）することでスタンドアローンモードで実行することができます。
-あるいは、 ``libTestOut.so`` を初期化関数の ``TestOutInit`` を利用して、
+あるいは、 ``libTestOut_cpp.so`` を初期化関数の ``TestOut_cppInit`` を利用して、
 マネージャにロードすることができます。このライブラリは ``${prefix}/components/lib`` 
 または ``${prefix}/components/lib64`` にインストールされます。
 
@@ -114,7 +114,7 @@ out             OutPort     RTC::TimedLong
 例
 ==
 
-例のrtc.confファイルは ``${prefix}/components/share/TestOut/examples/conf/``
+例のrtc.confファイルは ``${prefix}/components/share/TestOut_cpp/examples/conf/``
 フォルダにインストールされています。
 
 Changelog
