@@ -1,20 +1,20 @@
 ﻿// -*- C++ -*-
 /*!
- * @file  TestOut_cpp.cpp
+ * @file  TestOut_cppTest.cpp
  * @brief TestOut Component
  * @date $Date$
  *
  * $Id$
  */
 
-#include "TestOut_cpp.h"
+#include "TestOut_cppTest.h"
 
 // Module specification
 // <rtc-template block="module_spec">
 static const char* testout_cpp_spec[] =
   {
-    "implementation_id", "TestOut_cpp",
-    "type_name",         "TestOut_cpp",
+    "implementation_id", "TestOut_cppTest",
+    "type_name",         "TestOut_cppTest",
     "description",       "TestOut Component",
     "version",           "1.2.2",
     "vendor",            "Sugar Sweet Robotics",
@@ -32,7 +32,7 @@ static const char* testout_cpp_spec[] =
  * @brief constructor
  * @param manager Maneger Object
  */
-TestOut_cpp::TestOut_cpp(RTC::Manager* manager)
+TestOut_cppTest::TestOut_cppTest(RTC::Manager* manager)
     // <rtc-template block="initializer">
   : RTC::DataFlowComponentBase(manager),
     m_outOut("out", m_out)
@@ -44,20 +44,20 @@ TestOut_cpp::TestOut_cpp(RTC::Manager* manager)
 /*!
  * @brief destructor
  */
-TestOut_cpp::~TestOut_cpp()
+TestOut_cppTest::~TestOut_cppTest()
 {
 }
 
 
 
-RTC::ReturnCode_t TestOut_cpp::onInitialize()
+RTC::ReturnCode_t TestOut_cppTest::onInitialize()
 {
   // Registration: InPort/OutPort/Service
   // <rtc-template block="registration">
   // Set InPort buffers
+  addInPort("out", m_outIn);
 
   // Set OutPort buffer
-  addOutPort("out", m_outOut);
 
   // Set service provider to Ports
 
@@ -74,76 +74,74 @@ RTC::ReturnCode_t TestOut_cpp::onInitialize()
 }
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onFinalize()
+RTC::ReturnCode_t TestOut_cppTest::onFinalize()
 {
   return RTC::RTC_OK;
 }
 */
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onStartup(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onStartup(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 */
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onShutdown(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onShutdown(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 */
 
 
-RTC::ReturnCode_t TestOut_cpp::onActivated(RTC::UniqueId ec_id)
-{
-  m_out.data = 1;
-  m_outOut.write();
-  return RTC::RTC_OK;
-}
-
-
-RTC::ReturnCode_t TestOut_cpp::onDeactivated(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onActivated(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 
 
-RTC::ReturnCode_t TestOut_cpp::onExecute(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onDeactivated(RTC::UniqueId ec_id)
+{
+  return RTC::RTC_OK;
+}
+
+
+RTC::ReturnCode_t TestOut_cppTest::onExecute(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onAborting(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onAborting(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 */
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onError(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onError(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 */
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onReset(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onReset(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 */
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onStateUpdate(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onStateUpdate(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
 */
 
 /*
-RTC::ReturnCode_t TestOut_cpp::onRateChanged(RTC::UniqueId ec_id)
+RTC::ReturnCode_t TestOut_cppTest::onRateChanged(RTC::UniqueId ec_id)
 {
   return RTC::RTC_OK;
 }
@@ -154,12 +152,12 @@ RTC::ReturnCode_t TestOut_cpp::onRateChanged(RTC::UniqueId ec_id)
 extern "C"
 {
 
-  void TestOut_cppInit(RTC::Manager* manager)
+  void TestOut_cppTestInit(RTC::Manager* manager)
   {
     coil::Properties profile(testout_cpp_spec);
     manager->registerFactory(profile,
-                             RTC::Create<TestOut_cpp>,
-                             RTC::Delete<TestOut_cpp>);
+                             RTC::Create<TestOut_cppTest>,
+                             RTC::Delete<TestOut_cppTest>);
   }
 
 };
